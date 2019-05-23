@@ -1,0 +1,12 @@
+<!--components/tabList/tabList.wxml-->
+<view class='scroll-container'>
+    <scroll-view scroll-with-animation scroll-x class='scroll-view' scroll-left='{{toScrollLeft}}' bindscroll='onScroll'>
+        <view class='scroll-inline-container' bindtap='switchTab'>
+            <view wx:for='{{tabList}}' class='scroll-item' wx:key='{{index}}' data-index='{{index}}' id='item{{index}}'>
+                <view class='item-container' data-index='{{index}}'>
+                    <text class='name {{index==selectTabIndex?"active":""}}' data-index='{{index}}'>{{item}}</text>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>
